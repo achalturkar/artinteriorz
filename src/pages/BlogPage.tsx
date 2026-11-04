@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link, useLocation, useRoute } from "wouter";
 import { SiteShell } from "@/components/site/SiteShell";
 import { setPageSeo } from "@/lib/seo";
 import { PageHero } from "@/components/site/PageHero";
@@ -84,17 +85,63 @@ function BlogModal({ post, onClose }: { post: BlogPost; onClose: () => void }) {
             </p>
 
             <div className="mt-8 space-y-5">
-              {post.body.map((para, i) => (
-                <motion.p
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
-                  className="text-muted-foreground leading-[1.85] text-[15px]"
-                >
-                  {para}
-                </motion.p>
-              ))}
+              {post.content
+                ? post.content.map((block, i) => {
+                    if (block.type === "heading") {
+                      return (
+                        <h3 key={i} className="font-display text-2xl text-charcoal pt-3">
+                          {block.text}
+                        </h3>
+                      );
+                    }
+                    if (block.type === "list") {
+                      return (
+                        <ul
+                          key={i}
+                          className="list-disc space-y-2 pl-6 text-muted-foreground leading-[1.85] text-[15px]"
+                        >
+                          {block.items.map((item) => <li key={item}>{item}</li>)}
+                        </ul>
+                      );
+                    }
+                    if (block.type === "image") {
+                      return (
+                        <figure key={i} className="overflow-hidden">
+                          <img
+                            src={block.src}
+                            alt={block.alt}
+                            loading="lazy"
+                            className="w-full max-h-[34rem] object-cover"
+                          />
+                          <figcaption className="mt-2 text-xs text-muted-foreground">
+                            {block.alt}
+                          </figcaption>
+                        </figure>
+                      );
+                    }
+                    return (
+                      <motion.p
+                        key={i}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
+                        className="text-muted-foreground leading-[1.85] text-[15px]"
+                      >
+                        {block.text}
+                      </motion.p>
+                    );
+                  })
+                : post.body.map((para, i) => (
+                    <motion.p
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
+                      className="text-muted-foreground leading-[1.85] text-[15px]"
+                    >
+                      {para}
+                    </motion.p>
+                  ))}
             </div>
 
             <div className="mt-10 pt-8 border-t border-border flex flex-wrap items-center justify-between gap-4">
@@ -124,17 +171,34 @@ const categories = [ALL, ...Array.from(new Set(blogData.posts.map((p) => p.categ
 export default function BlogPage() {
   const [activePost, setActivePost] = useState<BlogPost | null>(null);
   const [filter, setFilter] = useState(ALL);
+  const [isArticleRoute, routeParams] = useRoute("/blog/:slug");
+  const [, setLocation] = useLocation();
+  const routeSlug = isArticleRoute ? routeParams?.slug : undefined;
+  const routePost = blogData.posts.find((post) => post.slug === routeSlug);
 
   const filtered =
     filter === ALL ? blogData.posts : blogData.posts.filter((p) => p.category === filter);
 
   useEffect(() => {
-    setPageSeo({
-      title: "Interior Design Blog | Art Interiorz Nagpur",
-      description: "Tips, trends & ideas on interior design, modular kitchens, and home renovation in Nagpur. Practical advice from our design experts.",
-      canonicalUrl: "https://www.artinteriorz.com/blog",
-    });
-  }, []);
+    if (routePost) {
+      setActivePost(routePost);
+      setPageSeo({
+        title: routePost.metaTitle ?? `${routePost.title} | Art Interiorz`,
+        description: routePost.metaDescription ?? routePost.excerpt,
+        keywords: "interior designer in Manish Nagar",
+        canonicalUrl: `https://www.artinteriorz.com/blog/${routePost.slug}`,
+      });
+    } else if (!routeSlug) {
+      setActivePost(null);
+      setPageSeo({
+        title: "Interior Design Blog | Art Interiorz Nagpur",
+        description:
+          "Tips, trends & ideas on interior design, modular kitchens, and home renovation in Nagpur. Practical advice from our design experts.",
+        keywords: "interior designer in Manish Nagar",
+        canonicalUrl: "https://www.artinteriorz.com/blog",
+      });
+    }
+  }, [routePost, routeSlug]);
 
   return (
     <SiteShell>
@@ -180,10 +244,8 @@ export default function BlogPage() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5, delay: Math.min(i, 6) * 0.06, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    <article
-                      className="group bg-warm-white h-full flex flex-col cursor-pointer"
-                      onClick={() => setActivePost(post)}
-                    >
+                  <Link href={`/blog/${post.slug}`} className="block h-full">
+                    <article className="group bg-warm-white h-full flex flex-col">
                       <div className="relative aspect-[4/3] overflow-hidden bg-ivory">
                         <img
                           src={post.image}
@@ -216,7 +278,8 @@ export default function BlogPage() {
                           Read Article <ArrowUpRight size={13} />
                         </span>
                       </div>
-                    </article>
+                      </article>
+                  </Link>
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -227,7 +290,7 @@ export default function BlogPage() {
       {/* Blog post modal */}
       <AnimatePresence>
         {activePost && (
-          <BlogModal post={activePost} onClose={() => setActivePost(null)} />
+          <BlogModal post={activePost} onClose={() => setLocation("/blog")} />
         )}
       </AnimatePresence>
     </SiteShell>

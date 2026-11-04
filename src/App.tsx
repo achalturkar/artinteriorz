@@ -27,6 +27,7 @@ function AppRoutes() {
         <Route path="/services" component={ServicesPage} />
         <Route path="/portfolio" component={PortfolioPage} />
         <Route path="/contact" component={ContactPage} />
+        <Route path="/blog/:slug" component={BlogPage} />
         <Route path="/blog" component={BlogPage} />
         <Route path="/career" component={CareerPage} />
         <Route path="/vendors" component={VendorsPage} />

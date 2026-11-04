@@ -3,6 +3,7 @@ import { Reveal, SectionLabel } from "./Reveal";
 import { motion } from "framer-motion";
 import { contactData } from "@/data/contactData";
 import { createWhatsAppSubmissionUrl } from "@/lib/whatsapp";
+import { googleMapsEmbedUrl } from "@/lib/googleMaps";
 
 const iconMap = {
   Studio: MapPin,
@@ -10,9 +11,6 @@ const iconMap = {
   Email: Mail,
   Careers: Briefcase,
 } as const;
-
-const mapEmbedUrl =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.42985468885!2d79.080056!3d21.0954221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf0e7c30f4f3%3A0x4aab2d2075208ac9!2sArt%20Interiorz!5e0!3m2!1sen!2sin!4v1793284360809!5m2!1sen!2sin";
 
 export function Contact({ fullWidthMap = false }: { fullWidthMap?: boolean }) {
   return (
@@ -60,7 +58,7 @@ export function Contact({ fullWidthMap = false }: { fullWidthMap?: boolean }) {
                 <div className="mt-12 overflow-hidden border border-border" style={{ height: "280px" }}>
                   <iframe
                     title="Art Interiorz Studio Location"
-                    src={mapEmbedUrl}
+                    src={googleMapsEmbedUrl}
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -157,7 +155,7 @@ export function Contact({ fullWidthMap = false }: { fullWidthMap?: boolean }) {
           <div className="w-full h-[min(52vh,480px)] min-h-[320px]">
             <iframe
               title="Art Interiorz Studio Location"
-              src={mapEmbedUrl}
+              src={googleMapsEmbedUrl}
               width="100%"
               height="100%"
               style={{ border: 0, display: "block" }}

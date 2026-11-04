@@ -1,12 +1,21 @@
+export type BlogContentBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "heading"; text: string }
+  | { type: "list"; items: string[] }
+  | { type: "image"; src: string; alt: string };
+
 export type BlogPost = {
   slug: string;
   title: string;
   excerpt: string;
   body: string[];
+  content?: BlogContentBlock[];
   category: string;
   readTime: string;
   date: string;
   image: string;
+  metaTitle?: string;
+  metaDescription?: string;
 };
 
 export const blogData = {
@@ -17,7 +26,7 @@ export const blogData = {
   },
   intro:
     "Notes, guides and inspiration from the Art Interiorz studio — on materials, modular kitchens, renovation, hospitality and the craft of living beautifully.",
-  posts: [
+  posts: ([
     {
       slug: "thoughtful-home-design",
       title: "Where Dream Homes Begin with Thoughtful Design",
@@ -110,6 +119,116 @@ export const blogData = {
       date: "February 14, 2025",
       image: "/assets/Blog/3D-visualization.jpg",
     },
+    {
+      slug: "interior-design-trends-2026-japandi-warm-minimalism",
+      title: "Top Interior Trends of 2026: Japandi, Warm Minimalism and Earthy Tones",
+      excerpt:
+        "Explore 2026's defining interior trends and learn how to bring warm minimalism, Japandi and earthy colours into your Nagpur home.",
+      body: [],
+      content: [
+        {
+          type: "paragraph",
+          text: "For years, interiors were dominated by cool greys and stark white rooms. In 2026, that era is clearly fading. Designers are moving towards homes that feel calm, warm and genuinely lived-in. Three ideas lead this shift: warm minimalism, Japandi and earthy tones. Here is what each one means and how you can use it in your own home.",
+        },
+        { type: "heading", text: "1. Warm Minimalism: Less, But Better" },
+        {
+          type: "paragraph",
+          text: "Warm minimalism keeps the simplicity of minimalist design but removes its cold edge. Instead of bare walls and empty rooms, it uses soft neutrals, layered textures and natural materials. The idea is fewer objects, each chosen with care.",
+        },
+        {
+          type: "image",
+          src: "/assets/Blog/earthy-coastal-living-room.png",
+          alt: "Warm minimalist living room with natural wood, soft neutral fabrics and abundant daylight",
+        },
+        {
+          type: "list",
+          items: [
+            "Paint walls in sand, clay, warm beige or soft brown instead of cool grey.",
+            "Add linen curtains, cotton throws and a textured rug for depth.",
+            "Choose wooden furniture with rounded edges.",
+            "Use one large mirror to bounce light instead of crowding the wall with decor.",
+          ],
+        },
+        { type: "heading", text: "2. Japandi: Where Calm Meets Comfort" },
+        {
+          type: "paragraph",
+          text: "Japandi blends Japanese restraint with Scandinavian functionality. Think low furniture, clean lines, hidden storage, plenty of natural light and a limited palette built around two wood tones. Its clutter-free planning makes it especially useful for compact apartments.",
+        },
+        {
+          type: "image",
+          src: "/assets/Blog/japandi-bedroom.png",
+          alt: "Japandi-inspired bedroom with low wooden furniture, natural textures and warm daylight",
+        },
+        {
+          type: "paragraph",
+          text: "The 2026 version is warmer than the early, almost clinical Japandi of a few years ago. Designers now pair a warm neutral wall with one grounded earthy colour. Snake plants, peace lilies and ferns suit this style and cope well with Indian conditions.",
+        },
+        { type: "heading", text: "3. Earthy Tones: Colour from Nature" },
+        {
+          type: "paragraph",
+          text: "The 2026 palette borrows directly from the outdoors: terracotta, ochre, olive green, caramel and warm browns, with deeper accents like oxblood or navy for contrast. Colour drenching—painting the walls, ceiling and trim in a single hue—creates an immersive feel.",
+        },
+        {
+          type: "paragraph",
+          text: "Earthy colours work best when layered with texture: bouclé, velvet, wool and linen. Curved, organic shapes such as rounded sofas and arched mirrors soften the look further.",
+        },
+        { type: "heading", text: "What About Pantone's Cloud Dancer?" },
+        {
+          type: "paragraph",
+          text: "Pantone's Colour of the Year for 2026 is Cloud Dancer, a soft, airy off-white. As a backdrop with warm woods and earthy accents, it fits neatly into all three trends above.",
+        },
+        { type: "heading", text: "Bringing These Trends Home in Nagpur" },
+        {
+          type: "paragraph",
+          text: "You do not need a full renovation. Start with paint, curtains, cushions and one statement piece. Keep expensive foundations—such as flooring, wardrobes and kitchen carcasses—in timeless finishes, and let accessories carry the trend. This protects your investment and stops the home from looking dated in two years.",
+        },
+        {
+          type: "paragraph",
+          text: "Nagpur's hot summers also make these styles a practical choice. Natural light, breathable fabrics like cotton and linen, light wall colours and indoor greenery keep a home feeling airy and comfortable.",
+        },
+        {
+          type: "paragraph",
+          text: "Every home has its own layout, light and budget, so working with an experienced interior designer in Manish Nagar can help you adapt these trends instead of copying them. Art Interiorz has been designing homes in Nagpur since 2017. When searching for the Best Interior Designer in Nagpur, look for someone who listens to your lifestyle first and trends second.",
+        },
+        { type: "heading", text: "Frequently Asked Questions" },
+        {
+          type: "heading",
+          text: "What are the top interior design trends for 2026?",
+        },
+        {
+          type: "paragraph",
+          text: "Warm minimalism, Japandi, earthy colour palettes, natural materials, curved furniture and layered lighting lead the year. The common thread is warmth, comfort and longevity over cold, showy design.",
+        },
+        { type: "heading", text: "Is Japandi suitable for Indian homes?" },
+        {
+          type: "paragraph",
+          text: "Yes. Its clean layouts, hidden storage and natural light suit compact apartments, and its focus on natural materials and greenery works well in hot climates.",
+        },
+        {
+          type: "heading",
+          text: "What is the difference between minimalism and warm minimalism?",
+        },
+        {
+          type: "paragraph",
+          text: "Classic minimalism relies on stark whites, greys and very few objects. Warm minimalism keeps the simplicity but adds earthy colours, soft textures and natural materials so the space feels cosy.",
+        },
+        {
+          type: "heading",
+          text: "How do I choose an interior designer in Manish Nagar for these trends?",
+        },
+        {
+          type: "paragraph",
+          text: "Check completed projects, ask for a clear cost and timeline, and see whether the designer can adapt trends to your space and budget. A good designer should also suggest which elements to keep timeless.",
+        },
+      ],
+      category: "Guides",
+      readTime: "6 min read",
+      date: "November 4, 2026",
+      image: "/assets/Blog/warm-neutral-living-room.png",
+      metaTitle: "Interior Trends 2026: Japandi, Warm Minimalism & Earth Tones",
+      metaDescription:
+        "Explore 2026's top interior trends: Japandi, warm minimalism and earthy tones. Practical ideas from an interior designer in Manish Nagar, Nagpur.",
+    },
     // {
     //   slug: "interior-design-cost-nagpur",
     //   title: "Interior Design Cost in Nagpur — A Transparent Breakdown",
@@ -129,5 +248,5 @@ export const blogData = {
     //   date: "January 30, 2025",
     //   image: "/assets/Blog/interior-design-cost.jpg",
     // },
-  ] as BlogPost[],
+  ] as BlogPost[]).sort((a, b) => Date.parse(b.date) - Date.parse(a.date)),
 };

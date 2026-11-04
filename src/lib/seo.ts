@@ -17,6 +17,7 @@ export const setPageSeo = ({
   canonicalUrl,
   ogTitle,
   ogDescription,
+  keywords,
   robots = "index, follow",
 }: {
   title: string;
@@ -24,10 +25,16 @@ export const setPageSeo = ({
   canonicalUrl?: string;
   ogTitle?: string;
   ogDescription?: string;
+  keywords?: string;
   robots?: string;
 }) => {
   document.title = title;
   setMeta("description", description);
+  if (keywords) {
+    setMeta("keywords", keywords);
+  } else {
+    head.querySelector('meta[name="keywords"]')?.remove();
+  }
   setMeta("robots", robots);
   setMeta("og:type", "website", true);
   setMeta("og:site_name", "Art Interiorz", true);
