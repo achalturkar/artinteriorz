@@ -16,6 +16,7 @@ export type BlogPost = {
   image: string;
   metaTitle?: string;
   metaDescription?: string;
+  metaKeywords?: string;
 };
 
 export const blogData = {
@@ -228,6 +229,145 @@ export const blogData = {
       metaTitle: "Interior Trends 2026: Japandi, Warm Minimalism & Earth Tones",
       metaDescription:
         "Explore 2026's top interior trends: Japandi, warm minimalism and earthy tones. Practical ideas from an interior designer in Manish Nagar, Nagpur.",
+    },
+    {
+      slug: "modular-kitchen-design-ideas-2026",
+      title: "Modular Kitchen Design Ideas 2026: Trends, Layouts and Cost Guide",
+      excerpt:
+        "Explore 2026 modular kitchen trends, practical layouts, storage ideas and material costs to plan a kitchen that works for your home.",
+      body: [],
+      content: [
+        {
+          type: "paragraph",
+          text: "Kitchen trends move slowly in India, because most families renovate once and live with the result for eight to ten years. That makes 2026 interesting: the trends are less about flashy gloss and more about calm finishes, smart storage and layouts that suit the way Indian families actually cook. Here is what is in, what it costs and how to plan yours.",
+        },
+        {
+          type: "image",
+          src: "/assets/Blog/modular-kitchen-ideas-2026.png",
+          alt: "Warm neutral L-shaped modular kitchen with matte cabinets, stone countertop and pendant lighting",
+        },
+        { type: "heading", text: "1. Matte, Warm and Quietly Premium" },
+        {
+          type: "paragraph",
+          text: "High-gloss kitchens are slowly losing ground to matte laminates and suede finishes, which look softer and show fewer fingerprints. Palettes lean towards beige, greige, soft cream and earthy terracotta, often with natural wood accents. It is the same warm minimalism trend taking over living rooms, now moving into the kitchen.",
+        },
+        { type: "heading", text: "2. Handleless Cabinets and Stone Surfaces" },
+        {
+          type: "paragraph",
+          text: "Clean-lined, handleless cabinets with push-to-open or channel profiles keep the kitchen sleek and easy to wipe. Pair them with quartz or granite countertops and a stone-look backsplash for a premium feel. One practical tip: if you cook with turmeric often, make sure quartz edges are well sealed to avoid staining.",
+        },
+        { type: "heading", text: "3. Smart Storage Beats Extra Square Feet" },
+        {
+          type: "paragraph",
+          text: "In 2026, a well-planned small kitchen outperforms a badly planned big one. Look for drawer-heavy storage, pull-out corner units, tandem drawers, tall pantry units and pocket doors that hide the work zone. Some designs even add lights that switch on when a drawer opens.",
+        },
+        {
+          type: "paragraph",
+          text: "Keep in mind that hardware such as hinges, channels and lift systems can take 25 to 35 percent of the budget, so this is the wrong place to cut corners.",
+        },
+        {
+          type: "image",
+          src: "/assets/Blog/modular-kitchen-smart-storage-2026.png",
+          alt: "Modular kitchen with a pull-out pantry rack demonstrating smart storage",
+        },
+        { type: "heading", text: "4. Choose the Right Layout" },
+        {
+          type: "list",
+          items: [
+            "L-shaped: The most versatile choice for apartments. It uses two adjacent walls and leaves floor space for a small dining area.",
+            "Parallel: Works well in narrow flats with two facing counters.",
+            "U-shaped: Gives plenty of counter and storage space in larger kitchens.",
+            "Straight: Best for studios and very compact homes.",
+            "Island with pendant lights: Suits larger, open-plan kitchens.",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Whatever you pick, plan a good chimney and ventilation. Indian cooking with heavy tempering demands it, and induction-friendly layouts are also on the rise.",
+        },
+        {
+          type: "image",
+          src: "/assets/Blog/modular-kitchen-island-layout-2026.png",
+          alt: "Warm neutral modular kitchen with a central island table and natural light",
+        },
+        { type: "heading", text: "5. Know What You Are Paying For" },
+        {
+          type: "paragraph",
+          text: "The carcass material makes a big difference to both life and price. Typical per sq ft ranges in Indian metros look like this, and Nagpur rates will vary with brand and finish:",
+        },
+        {
+          type: "list",
+          items: [
+            "MDF / particle board: ₹1,200–₹1,800 per sq ft",
+            "HDHMR: ₹1,800–₹2,500 per sq ft",
+            "BWP plywood: ₹2,500–₹3,500 per sq ft",
+            "Marine plywood with premium finish: ₹3,500–₹5,000+ per sq ft",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "HDHMR and plywood are widely preferred because they resist moisture better than plain particle board, which matters in a wet, humid kitchen.",
+        },
+        { type: "heading", text: "6. Budget Guide for Indian Homes" },
+        {
+          type: "paragraph",
+          text: "Overall, a small kitchen typically costs around ₹1.5 to ₹3 lakh, a mid-size kitchen ₹3 to ₹6 lakh, and a premium one ₹6 lakh or more. Appliances are usually not included, so confirm what your quote covers.",
+        },
+        {
+          type: "paragraph",
+          text: "Two ways to keep costs in check: use standard cabinet widths (300, 450 and 600 mm) instead of fully custom sizes, and insist on a 3D plan with an itemised bill of quantities so there are no surprises or wasted material.",
+        },
+        { type: "heading", text: "Choosing the Right Designer" },
+        {
+          type: "paragraph",
+          text: "A kitchen is the hardest room to fix after installation, so choose carefully. Whether you are reading lists of the top 10 interior designers in Nagpur or asking friends for referrals, the Best Interior Designer in Nagpur for your home is the one who studies how you cook first and picks finishes second. Ask to see completed kitchens, request a clear material specification and check what warranty comes with the hardware.",
+        },
+        {
+          type: "paragraph",
+          text: "At Art Interiorz, modular kitchens are part of our full-service interior work, and we plan storage, lighting and workflow together so the kitchen looks good and works hard every day.",
+        },
+        { type: "heading", text: "Frequently Asked Questions" },
+        {
+          type: "heading",
+          text: "Which layout is best for a small apartment kitchen?",
+        },
+        {
+          type: "paragraph",
+          text: "An L-shaped layout is usually the most flexible, and a parallel layout suits narrow kitchens. Both use space efficiently and keep the cooking zone compact.",
+        },
+        {
+          type: "heading",
+          text: "Is HDHMR or plywood better for a modular kitchen?",
+        },
+        {
+          type: "paragraph",
+          text: "Both resist moisture better than particle board. HDHMR is a cost-effective choice, while BWP or marine plywood is preferred where you want maximum durability, especially around the sink.",
+        },
+        {
+          type: "heading",
+          text: "How much does a modular kitchen cost in India?",
+        },
+        {
+          type: "paragraph",
+          text: "Basic setups start around ₹1,200 to ₹2,500 per sq ft, while premium kitchens with high-end finishes and fittings can go beyond ₹5,000 per sq ft.",
+        },
+        {
+          type: "heading",
+          text: "Does the modular kitchen price include appliances?",
+        },
+        {
+          type: "paragraph",
+          text: "Usually not. Appliances, chimney and sometimes the countertop or plumbing work are quoted separately, so always ask for a complete itemised estimate.",
+        },
+      ],
+      category: "Kitchen",
+      readTime: "7 min read",
+      date: "November 13, 2026",
+      image: "/assets/Blog/modular-kitchen-ideas-2026.png",
+      metaTitle: "Modular Kitchen Ideas 2026: Trends & Cost | Art Interiorz",
+      metaDescription:
+        "Explore 2026 modular kitchen design trends, layouts, materials and cost per sq ft, with tips to choose the Best Interior Designer in Nagpur.",
+      metaKeywords: "top 10 interior designers in Nagpur, modular kitchen design ideas 2026",
     },
     // {
     //   slug: "interior-design-cost-nagpur",

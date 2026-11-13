@@ -185,7 +185,7 @@ export default function BlogPage() {
       setPageSeo({
         title: routePost.metaTitle ?? `${routePost.title} | Art Interiorz`,
         description: routePost.metaDescription ?? routePost.excerpt,
-        keywords: "interior designer in Manish Nagar",
+        keywords: routePost.metaKeywords ?? "interior designer in Manish Nagar",
         canonicalUrl: `https://www.artinteriorz.com/blog/${routePost.slug}`,
       });
     } else if (!routeSlug) {
