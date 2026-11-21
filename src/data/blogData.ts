@@ -1,5 +1,9 @@
 export type BlogContentBlock =
-  | { type: "paragraph"; text: string }
+  | {
+      type: "paragraph";
+      text: string;
+      parts?: { text: string; href?: string }[];
+    }
   | { type: "heading"; text: string }
   | { type: "list"; items: string[] }
   | { type: "image"; src: string; alt: string };
@@ -368,6 +372,133 @@ export const blogData = {
       metaDescription:
         "Explore 2026 modular kitchen design trends, layouts, materials and cost per sq ft, with tips to choose the Best Interior Designer in Nagpur.",
       metaKeywords: "top 10 interior designers in Nagpur, modular kitchen design ideas 2026",
+    },
+    {
+      slug: "restaurant-interior-design-ideas-layout-lighting-seating",
+      title: "Restaurant Interior Design Ideas: Layout, Lighting and Seating",
+      excerpt:
+        "Practical restaurant interior design ideas for layout, lighting and seating, plus tips for choosing restaurant interior designers in Nagpur.",
+      body: [],
+      content: [
+        {
+          type: "paragraph",
+          text: "Guests decide how they feel about a restaurant within the first minute. The light, the sound, the seat they sit on and how easily the staff reach them all shape that feeling, long before the food arrives. This guide shares restaurant interior design ideas for the three areas that matter most: layout, lighting and seating. It works whether you are opening a new place or refreshing an old one.",
+          parts: [
+            { text: "Guests decide how they feel about a restaurant within the first minute. The light, the sound, the seat they sit on and how easily the staff reach them all shape that feeling, long before the food arrives. This guide shares " },
+            { text: "restaurant interior design ideas", href: "https://www.artinteriorz.com/" },
+            { text: " for the three areas that matter most: layout, lighting and seating. It works whether you are opening a new place or refreshing an old one." },
+          ],
+        },
+        { type: "heading", text: "1. Start with the Layout" },
+        {
+          type: "paragraph",
+          text: "A good layout makes service smooth and guests comfortable. Begin by marking the zones: entry and waiting area, dining area, bar or counter, kitchen, washrooms and billing.",
+        },
+        {
+          type: "list",
+          items: [
+            "Follow the 60:40 rule. About 60% of the space goes to dining and 40% to the kitchen and storage. Counter-service and fast-casual places can give more space to dining.",
+            "Plan space per guest. Casual dining usually needs about 15 to 18 sq ft per seat. A 600 sq ft dining area, for example, comfortably holds roughly 33 to 40 seats.",
+            "Keep aisles open. Aim for main aisles of 4 to 5 ft, side aisles of 3 to 3.5 ft, and about 3.5 ft between table edges.",
+            "Shorten the kitchen route. Staff should reach tables by a short, straight path, and washrooms should be reachable from the dining area without passing the kitchen.",
+            "Design the first view. Whatever guests see at the door, whether it is a feature wall, a bar or a lit corner, sets their first impression.",
+          ],
+        },
+        { type: "heading", text: "2. Choose Seating That Fits Real Guests" },
+        {
+          type: "paragraph",
+          text: "Indian restaurants see everything from solo diners to big family groups on the same evening, so one table size is never enough.",
+        },
+        {
+          type: "list",
+          items: [
+            "Mix table sizes. Use a combination of 2-seaters, 4-seaters and a few tables for 6 or more that can be joined.",
+            "Use booths along the walls. They feel private and comfortable, and keeping the backs around 52 inches high lets guests still see the room.",
+            "Pick shapes wisely. Round tables soften tight corners and encourage conversation, while square tables are easy to combine for groups.",
+            "Test comfort. Sit on every chair for a while before ordering in bulk. Choose cushions that are firm and fabrics that wipe clean easily.",
+            "Add a few single seats. Window or counter seating suits solo diners and fills awkward corners.",
+          ],
+        },
+        { type: "heading", text: "3. Get the Lighting Right" },
+        {
+          type: "paragraph",
+          text: "Lighting changes how food looks and how long people stay. Plan it in four layers: ambient (overall glow), task (where work happens), accent (to highlight art or textures) and decorative (pendants and lamps that become part of the design).",
+        },
+        {
+          type: "list",
+          items: [
+            "Go warm in the dining area. Warm white light between 2700K and 3000K makes food look natural and faces look flattering.",
+            "Keep work areas brighter. Kitchens and washrooms can use cooler, brighter light, around 3500K to 4000K.",
+            "Add dimmers. Brighter light works for lunch, while softer light suits dinner. With dimmers, the same fixtures can serve both.",
+            "Light the table, not the guest’s eyes. Hang pendants low enough to define each table and avoid glare.",
+            "Make the entry shine. Wall sconces or a statement fixture at the door make a strong first impression, and lanterns or string lights work well outdoors.",
+          ],
+        },
+        { type: "heading", text: "4. 2026 Trends Worth Using" },
+        {
+          type: "list",
+          items: [
+            "Warm, natural colours. Earthy browns, olive and sage greens and terracotta feel welcoming and age well.",
+            "Local craft and art. Regional artists, cane, handloom and jaali details give a restaurant its own identity.",
+            "Sound comfort. Soft furnishings, wood panels and acoustic ceilings let people talk without raising their voices.",
+            "Flexible spaces. Dining areas that blend with a lounge or bar, with movable tables for events, are increasingly popular.",
+          ],
+        },
+        { type: "heading", text: "Common Mistakes to Avoid" },
+        {
+          type: "list",
+          items: [
+            "Squeezing in too many tables, so guests and staff keep bumping into each other.",
+            "Using only hard surfaces, which makes the room noisy.",
+            "Relying on harsh white light that flattens the mood.",
+            "Placing the exhaust or ventilation poorly, so smells reach the seats.",
+            "Forgetting a comfortable waiting area for busy evenings.",
+          ],
+        },
+        { type: "heading", text: "Choosing the Right Design Partner" },
+        {
+          type: "paragraph",
+          text: "A restaurant is a working space as much as a beautiful one, so look for experience in hospitality. When you compare restaurant interior designers in Nagpur, ask to see completed restaurants or cafes, and ask how they plan seating numbers, kitchen flow, ventilation and lighting together.",
+          parts: [
+            { text: "A restaurant is a working space as much as a beautiful one, so look for experience in hospitality. When you compare " },
+            { text: "restaurant interior designers in Nagpur", href: "https://www.artinteriorz.com/services" },
+            { text: ", ask to see completed restaurants or cafes, and ask how they plan seating numbers, kitchen flow, ventilation and lighting together." },
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "At Art Interiorz, hospitality design is part of our work, and we plan layout, lighting and seating as one connected system so the space looks good and runs smoothly from day one.",
+        },
+        { type: "heading", text: "Frequently Asked Questions" },
+        { type: "heading", text: "How much space does each guest need in a restaurant?" },
+        {
+          type: "paragraph",
+          text: "Casual dining usually needs about 15 to 18 sq ft per seat, including aisles. Fine dining needs more, and fast-casual places can manage with a little less.",
+        },
+        { type: "heading", text: "What is the best lighting colour for a restaurant?" },
+        {
+          type: "paragraph",
+          text: "Warm white light, between 2700K and 3000K, works best in dining areas. Add dimmers so you can change the mood between lunch and dinner.",
+        },
+        { type: "heading", text: "Which seating mix works best?" },
+        {
+          type: "paragraph",
+          text: "Use a mix of 2-seater, 4-seater and larger joinable tables, with some booths along the walls and a few counter or window seats for solo diners.",
+        },
+        { type: "heading", text: "When should I involve a designer?" },
+        {
+          type: "paragraph",
+          text: "As early as possible, ideally before you finalise the space or order furniture and kitchen equipment. Early planning decides ventilation, plumbing and electrical points, which are hard to change later.",
+        },
+      ],
+      category: "Hospitality",
+      readTime: "5 min read",
+      date: "November 21, 2026",
+      image: "/assets/Hospitality-design.webp",
+      metaTitle: "Restaurant Interior Design Ideas: Layout, Lighting, Seating",
+      metaDescription:
+        "Practical restaurant interior design ideas for layout, lighting and seating, plus tips for choosing restaurant interior designers in Nagpur.",
+      metaKeywords: "restaurant interior design ideas, restaurant interior designers in Nagpur",
     },
     // {
     //   slug: "interior-design-cost-nagpur",

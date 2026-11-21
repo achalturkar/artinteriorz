@@ -127,7 +127,21 @@ function BlogModal({ post, onClose }: { post: BlogPost; onClose: () => void }) {
                         transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
                         className="text-muted-foreground leading-[1.85] text-[15px]"
                       >
-                        {block.text}
+                        {block.parts
+                          ? block.parts.map((part, partIndex) =>
+                              part.href ? (
+                                <a
+                                  key={`${part.text}-${partIndex}`}
+                                  href={part.href}
+                                  className="text-charcoal underline decoration-gold underline-offset-4 hover:text-gold transition-colors"
+                                >
+                                  {part.text}
+                                </a>
+                              ) : (
+                                part.text
+                              ),
+                            )
+                          : block.text}
                       </motion.p>
                     );
                   })
